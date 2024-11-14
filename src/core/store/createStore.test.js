@@ -56,11 +56,8 @@ describe('createStore:', () => {
 
   test('should NOT call sub if unsubscribe', () => {
     const sub = store.subscribe(handler);
-
     sub.unsubscribe();
-
     store.dispatch({ type: 'ADD' });
-
     expect(handler).not.toHaveBeenCalled();
   });
 
